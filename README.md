@@ -1,14 +1,14 @@
 # modeline for Atom
 
-Modeline extension for Atom. The following options are supported:
+Semicolons are optional.
 
-- `mode: <str>`
-- `encoding: <str>`
-- `tab: <soft|hard>`
-- `tab-width: <int>`
+```
+# mode: python; tab-width: 2; tab: soft; encoding: utf8
+```
 
 ## Todo
 
+- Support comment styles other than `#`
 - Show errors in UI instead of just printing to the console
 
 ## License
