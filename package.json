@@ -1,6 +1,6 @@
 {
   "name": "modeline",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Support for modelines to specify language, encoding and tab width per file",
   "engines": {
     "atom": "*"
