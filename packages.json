@@ -1,0 +1,17 @@
+{
+  "name": "modeline",
+  "version": "0.0.1",
+  "description": "Support for modelines to specify language, encoding and tab width per file",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NiklasRosenstein/atom-modeline"
+  },
+  "bugs": {
+    "url": "https://github.com/NiklasRosenstein/atom-modeline/issues"
+  },
+  "license": "MIT"
+}
