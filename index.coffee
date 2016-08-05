@@ -53,6 +53,8 @@ module.exports = modeline =
       return false
 
     key = match[0].toLowerCase()
+    if key of modeline.aliases
+      key = modeline.aliases[key]
     value = match[1].replace /^\s+|\s*;?$/g, ""
     handler = modeline.handlers[key]
     if handler
@@ -61,6 +63,9 @@ module.exports = modeline =
     else
      console.log "modeline: unknown option", key
      return false
+
+  aliases:
+    "coding": "encoding"
 
   handlers:
     "encoding": (ed, value) =>

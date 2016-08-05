@@ -3,7 +3,7 @@
 Semicolons are optional.
 
 ```
-# mode: python; tab-width: 2; tab: soft; encoding: utf8
+# mode: python; tab-width: 2; tab: soft; encoding: utf8; coding: utf8
 ```
 
 ## Todo
