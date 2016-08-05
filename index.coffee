@@ -36,9 +36,10 @@ module.exports = modeline =
         # TODO: Support other comment styles
         if line and line[0] == '#'
           result = line.match /[\w\d\-\._]+:\s*[\w\d\-\._]+;?/g
-          for mode in result
-            if modeline.handle(ed, mode)
-              found_modeline = true
+          if result
+            for mode in result
+              if modeline.handle(ed, mode)
+                found_modeline = true
         else if line
           # We processed the whole first comment block, don't search
           # for a modeline anywhere else.
