@@ -26,7 +26,7 @@ module.exports = modeline =
   packagesInitialised: false
 
   # Register the text editor observer that checks for the modeline.
-  activate: (state) =>
+  activate: (state) ->
     atom.workspace.observeTextEditors (ed) =>
       lines = ed.getText().split "\n"
       found_modeline = false
@@ -46,17 +46,17 @@ module.exports = modeline =
           break
 
   # Handles a single modeline option and updates the editor.
-  handle: (ed, mode) =>
+  handle: (ed, mode) ->
     # Split key: value pair.
     match = mode.split ":"
     if match.length != 2
       return false
 
     key = match[0].toLowerCase()
-    if key of modeline.aliases
-      key = modeline.aliases[key]
+    if key of @aliases
+      key = @aliases[key]
     value = match[1].replace /^\s+|\s*;?$/g, ""
-    handler = modeline.handlers[key]
+    handler = @handlers[key]
     if handler
       handler ed, value
       return true
@@ -105,7 +105,7 @@ module.exports = modeline =
       # If packages have already been initialized, we can do the
       # action directly, otherwise we have to wait until all packages
       # have been initialized.
-      if modeline.packagesInitialized
+      if @packagesInitialized
         callback()
       else
         console.log "modeline: waiting for packages to be initialized..."
